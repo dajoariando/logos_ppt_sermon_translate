@@ -1,0 +1,5 @@
+openaikey.txt
+*.ppt
+.venv/
+.vscode/
+__pycache__/
