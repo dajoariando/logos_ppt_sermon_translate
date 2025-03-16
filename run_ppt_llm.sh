@@ -29,6 +29,10 @@ INPUT_FILE=$1
 OUTPUT_FILE=$2
 
 # Connect with OPENAI API
+if [ ! -f openaikey.txt ]; then
+    echo "Error: openaikey.txt does not exist. Get OpenAI API key from OpenAI website and save it in openaikey.txt"
+    exit 1
+fi
 export OPENAI_API_KEY=$(cat openaikey.txt)
 
 # Run the Python script with the specified input and output files
