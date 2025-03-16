@@ -31,7 +31,7 @@ def add_page (prs, input_text, input_notes):
     # add a textbox shape to the slide
     textbox = slide.shapes.add_textbox(left, top, width, height)
     text_frame = textbox.text_frame
-    text_frame.vertical_anchor = MSO_VERTICAL_ANCHOR.MIDDLE
+    text_frame.vertical_anchor = MSO_VERTICAL_ANCHOR.TOP
     text_frame.text = input_text
 
     # Optional: turn on auto-size or word wrap as needed
