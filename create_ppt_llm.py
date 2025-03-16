@@ -15,17 +15,22 @@ def create_ppt_llm(input_file, output_file):
     prs.slide_width = 12192000
     prs.slide_height = 6858000
 
-    # text_indo,text_eng = translate_csv("input_english_indo.csv") # takes csv file with two columns as am input
-    # text_eng = parse_txt("250315_input.txt") # uses a newline character as page separator
+    # text_indo,text_eng = translate_csv("input_file") # takes csv file with two columns as am input
+    # text_eng = parse_txt(input_file) # uses a newline character as page separator
     text_eng = parse_txt_dual_enter(input_file) # uses two newline characters as page separator
 
+    # add the text to the presentation
     for i in range(len(text_eng)):
         translation_indo = translate_chatgpt(text_eng[i]) # translate using ChatGPT (requires API access)
         # translation_indo = translate_ollama(text_eng[i]) # translate using Ollama (requires local server)
         prs = add_page(prs, translation_indo, text_eng[i]) # add a line to the presentation and comment to comment section
 
+        # Calculate and print the process percentage
+        percentage = (i+1) / len(text_eng) * 100
+        print(f"Progress:{percentage:3.0f} %")
+
     # save the file
     prs.save(output_file)
 
 # Example usage
-create_ppt_llm("250315_input_english.txt", "output_llm.pptx")
+# create_ppt_llm("input_sample.txt", "output_llm.pptx")

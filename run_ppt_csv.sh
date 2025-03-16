@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Example function invocation
-# ./run_ppt_csv.sh input_english_indo.csv output_csv.pptx
+# ./run_ppt_csv.sh input_sample.csv output_csv.pptx
 
 # Install Python virtual environment package
 # sudo apt install python3-venv -y

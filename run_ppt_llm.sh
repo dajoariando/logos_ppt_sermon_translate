@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Example function invocation
-# ./run_ppt_llm.sh 250315_input_english.txt output_llm.pptx
+# ./run_ppt_llm.sh input_sample.txt output_llm.pptx
 
 # Install Python virtual environment package
 # sudo apt install python3-venv -y
@@ -36,4 +36,4 @@ fi
 export OPENAI_API_KEY=$(cat openaikey.txt)
 
 # Run the Python script with the specified input and output files
-python run_ppt_llm.py "$INPUT_FILE" "$OUTPUT_FILE"
+python -u run_ppt_llm.py "$INPUT_FILE" "$OUTPUT_FILE"

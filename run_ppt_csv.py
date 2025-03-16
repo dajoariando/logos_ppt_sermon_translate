@@ -7,7 +7,7 @@ Arguments:
     <input_csv>   Path to the input CSV file.
     <output_pptx> Path to the output PowerPoint file.
 Example:
-    python run_ppt_csv.py input_english_indo.csv output_csv.pptx
+    python run_ppt_csv.py input_sample.csv output_csv.pptx
 """
 from create_ppt_csv import create_ppt_csv
 

@@ -10,8 +10,3 @@ def parse_txt_dual_enter(file_path):
         content = file.read()
     blocks = content.split('\n\n')
     return [block.strip() for block in blocks if block.strip()]
-
-# Example usage:
-# file_path = '/media/dave/SSD1T_AORUS/vm_share/WORKSPACES/Python/Sermon_translate/path_to_your_file.txt'
-# blocks_list = parse_txt_dual_enter(file_path)
-# print(blocks_list)

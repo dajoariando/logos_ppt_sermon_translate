@@ -8,8 +8,3 @@ def parse_txt(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
     return [line.strip() for line in lines if line.strip()]
-
-# Example usage:
-# file_path = '/media/dave/SSD1T_AORUS/vm_share/WORKSPACES/Python/Sermon_translate/path_to_your_file.txt'
-# lines_list = parse_txt(file_path)
-# print(lines_list)

@@ -8,7 +8,7 @@ Arguments:
     <input_txt>   Path to the input text file.
     <output_pptx> Path to the output PowerPoint file.
 Example:
-    python run_ppt_llm.py 250315_input_english.txt output_llm.pptx
+    python run_ppt_llm.py input_sample.txt output_llm.pptx
 """
 def main():
     if len(sys.argv) != 3:
