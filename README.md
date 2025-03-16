@@ -14,8 +14,8 @@ echo $OPENAI_API_KEY
 
 # and then run create_ppt_csv.py or create_ppt_llm.py from within VSCode.
 # or you can run from shell:
-#   python run_ppt_llm.py 250315_input_english.txt output_llm.pptx
-#   python run_ppt_csv.py input_english_indo.csv output_csv.pptx
+#   ./run_ppt_llm.sh 250315_input_english.txt output_llm.pptx
+#   ./run_ppt_csv.sh input_english_indo.csv output_csv.pptx
 
 
 # clean up: deactivate venv
