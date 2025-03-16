@@ -1,4 +1,5 @@
 openaikey.txt
+*.pptx
 *.ppt
 .venv/
 .vscode/
