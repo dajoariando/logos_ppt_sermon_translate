@@ -5,3 +5,8 @@ openaikey.txt
 .vscode/
 __pycache__/
 *.pyc
+build/
+dist/openaikey.txt
+dist/*.ppt
+dist/*.pptx
+*.spec
