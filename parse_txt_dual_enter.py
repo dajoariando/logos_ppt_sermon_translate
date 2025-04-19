@@ -6,7 +6,8 @@ def parse_txt_dual_enter(file_path):
     :param file_path: Path to the text file
     :return: List of non-empty, stripped blocks of text from the text file
     """
-    with open(file_path, 'r') as file:
+    # with open(file_path, 'r') as file: # for linux
+    with open(file_path, 'r', encoding='utf-8') as file: # for Windows
         content = file.read()
     blocks = content.split('\n\n')
     return [block.strip() for block in blocks if block.strip()]
