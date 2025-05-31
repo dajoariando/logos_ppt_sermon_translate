@@ -59,4 +59,5 @@ deactivate
 ## Create standalone application (tested in Windows)
 ```sh
 pyinstaller --onefile run_ppt_llm.py
+pyinstaller --onefile run_ppt_csv.py
 ```
