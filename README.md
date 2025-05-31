@@ -11,22 +11,26 @@ pip install -r requirements.txt
 pip list
 ```
 
-## Connect with OpenAI API
+## Run scripts
+
+To run the provided scripts, use the following commands:
+
+### For `run_ppt_csv.py`
 ```sh
-export OPENAI_API_KEY=$(cat openaikey.txt)
-echo $OPENAI_API_KEY
+python run_ppt_csv.py input_sample.csv output.pptx
 ```
 
-## Run scripts
-You can run `create_ppt_csv.py` or `create_ppt_llm.py` from within VSCode, or run this code from the shell:
+### For `run_ppt_llm.py`
 ```sh
-./run_ppt_llm.sh input_sample.txt output_llm.pptx
-./run_ppt_csv.sh input_sample.csv output_csv.pptx
-./run_ppt_csv.bat input_sample.csv output_csv.pptx
+python run_ppt_llm.py input_sample.txt output.pptx
 ```
-Or you can run precompiled binary from dist folder in Windows:
-```
-run_ppt_llm.exe input_sample.txt output_llm.pptx
+
+### Run precompiled binary (Windows only)
+
+If you are using Windows, you can run the precompiled binary located in the `dist` folder:
+
+```sh
+run_ppt_llm.exe openaikey.txt input_sample.txt output.pptx
 ```
 
 ## Clean up
