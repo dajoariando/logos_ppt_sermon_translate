@@ -39,7 +39,7 @@ python run_ppt_llm.py input_sample.txt output.pptx
 If you are using Windows, you can run the precompiled binary located in the `dist` folder:
 
 ```sh
-.\dist\run_ppt_csv.exe ./openaikey.txt ../samples/input_sample.csv ./output.pptx
+.\dist\run_ppt_csv.exe ../samples/input_sample.csv ./output.pptx
 .\dist\run_ppt_llm.exe ./openaikey.txt ../samples/input_sample.txt ./output.pptx
 ```
 
