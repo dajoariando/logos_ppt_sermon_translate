@@ -1,8 +1,17 @@
 # Setup
+
+### For Linux/MacOS
 ```sh
 sudo apt install python3-venv
 python3 -m venv .venv
 source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+### For Windows
+```sh
+python -m venv .venv
+.venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
@@ -30,14 +39,24 @@ python run_ppt_llm.py input_sample.txt output.pptx
 If you are using Windows, you can run the precompiled binary located in the `dist` folder:
 
 ```sh
-run_ppt_llm.exe openaikey.txt input_sample.txt output.pptx
+.\dist\run_ppt_csv.exe ./openaikey.txt ../samples/input_sample.csv ./output.pptx
+.\dist\run_ppt_llm.exe ./openaikey.txt ../samples/input_sample.txt ./output.pptx
 ```
 
 ## Clean up
 To deactivate the virtual environment:
+
+### For Linux/MacOS
 ```sh
 deactivate
 ```
 
+### For Windows
+```sh
+.venv\Scripts\deactivate
+```
+
 ## Create standalone application (tested in Windows)
+```sh
 pyinstaller --onefile run_ppt_llm.py
+```
