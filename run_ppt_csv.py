@@ -1,5 +1,8 @@
 import sys
 import os
+from create_ppt_csv import create_ppt_csv
+import tkinter as tk
+from tkinter import filedialog
 """
 This script converts a CSV file into a PowerPoint presentation.
 Usage:
@@ -11,24 +14,26 @@ Arguments:
 Example:
     python run_ppt_csv.py openai_key.txt input_sample.csv output_csv.pptx
 """
-from create_ppt_csv import create_ppt_csv
-
-
 
 def main():
-    if len(sys.argv) != 4:
-        print("Usage: python run_ppt_csv.py <openaikey_txt> <input_csv> <output_pptx>")
-        sys.exit(1)
-    
-    openaikey_txt = sys.argv[1]
-    input_csv = sys.argv[2]
-    output_pptx = sys.argv[3]
+    def get_file_path(prompt):
+        root = tk.Tk()
+        root.withdraw()  # Hide the main tkinter window
+        return filedialog.askopenfilename(title=prompt)
 
-    print(f"Using OpenAI API key from: {openaikey_txt}")
+    def get_save_file_path(prompt, default_extension, filetypes):
+        root = tk.Tk()
+        root.withdraw()  # Hide the main tkinter window
+        return filedialog.asksaveasfilename(title=prompt, defaultextension=default_extension, filetypes=filetypes)
 
-    with open(openaikey_txt, 'r') as file:
-        os.environ["OPENAI_API_KEY"] = file.read().strip()
-    
+    if len(sys.argv) == 3:
+        input_csv = sys.argv[1]
+        output_pptx = sys.argv[2]
+    else:
+        print("Command-line arguments not provided. Opening file dialogs...")
+        input_csv = get_file_path("Select the input CSV file")
+        output_pptx = get_save_file_path("Select the output PowerPoint file", ".pptx", [("PowerPoint files", "*.pptx")])
+
     create_ppt_csv(input_csv, output_pptx)
 
 if __name__ == "__main__":
