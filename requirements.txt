@@ -2,3 +2,4 @@ python-pptx
 requests
 pandas
 openai
+pyinstaller

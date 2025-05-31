@@ -40,5 +40,4 @@ deactivate
 ```
 
 ## Create standalone application (tested in Windows)
-pip install pyinstaller
 pyinstaller --onefile run_ppt_llm.py
