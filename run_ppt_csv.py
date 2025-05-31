@@ -16,10 +16,10 @@ Example:
 """
 
 def main():
-    def get_file_path(prompt):
+    def get_file_path(prompt, filetypes):
         root = tk.Tk()
         root.withdraw()  # Hide the main tkinter window
-        return filedialog.askopenfilename(title=prompt)
+        return filedialog.askopenfilename(title=prompt, filetypes=filetypes)
 
     def get_save_file_path(prompt, default_extension, filetypes):
         root = tk.Tk()
@@ -31,7 +31,7 @@ def main():
         output_pptx = sys.argv[2]
     else:
         print("Command-line arguments not provided. Opening file dialogs...")
-        input_csv = get_file_path("Select the input CSV file")
+        input_csv = get_file_path("Select the input CSV file", [("CSV files", "*.csv")])
         output_pptx = get_save_file_path("Select the output PowerPoint file", ".pptx", [("PowerPoint files", "*.pptx")])
 
     create_ppt_csv(input_csv, output_pptx)

@@ -16,10 +16,10 @@ Example:
 """
 def main():
 
-    def get_file_path(prompt):
+    def get_file_path(prompt, filetypes):
         root = tk.Tk()
         root.withdraw()  # Hide the main tkinter window
-        return filedialog.askopenfilename(title=prompt)
+        return filedialog.askopenfilename(title=prompt, filetypes=filetypes)
 
     def get_save_file_path(prompt, default_extension, filetypes):
         root = tk.Tk()
@@ -29,11 +29,10 @@ def main():
     if len(sys.argv) == 4:
         openaikey_txt = sys.argv[1]
         input_txt = sys.argv[2]
-        output_pptx = sys.argv[3]
     else:
         print("Command-line arguments not provided. Opening file dialogs...")
-        openaikey_txt = get_file_path("Select the OpenAI API key text file")
-        input_txt = get_file_path("Select the English text file")
+        openaikey_txt = get_file_path("Select the OpenAI API key file", [("Text files", "*.txt")])
+        input_txt = get_file_path("Select the input English text file", [("Text files", "*.txt")])
         output_pptx = get_save_file_path("Select the output PowerPoint file", ".pptx", [("PowerPoint files", "*.pptx")])
 
     with open(openaikey_txt, 'r') as file:
